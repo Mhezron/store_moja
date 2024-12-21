@@ -1,0 +1,34 @@
+
+<div class="container bg-light boder rounded shadow p-5 d-flex" style="max-width: 400px; margin-top: 270px" >   
+    
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+<div class="text-center">
+        <h4>Store Moja</h4>
+    </div> 
+  <div class="form-group p-2 mx-sm-3 mb-2" style="max-width: 500px;">
+    <%= f.label :email, class: "form-label" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+  </div>
+  <div class="form-group p-2 mx-sm-3 mb-2" style="max-width: 500px;">
+    <%= f.label :password, class: "form-label" %>
+    <%= f.password_field :password, autocomplete: "current-password", class: "form-control" %>
+  </div>
+
+   <% if devise_mapping.rememberable? %>
+    <div class="form-check mb-3">
+      <%= f.check_box :remember_me, class: "form-check-input" %>
+      <%= f.label :remember_me, class: "form-check-label" %>
+    </div>
+  <% end %>
+    <div class="p-2 mx-sm-3 mb-2" >
+    <%= f.submit "Log In", class: "btn btn-secondary btn-lg fw-semibold" %>
+    </div>
+
+    <div class="text-center mt-3">
+  <%= render "devise/shared/links" %>
+</div>
+
+<% end %>
+
+</form>
+</div>
